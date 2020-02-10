@@ -38,7 +38,7 @@ TwoDimensionalPoint &TwoDimensionalPoint::operator=(const TwoDimensionalPoint &r
         *xcor = *rhs.xcor;
         *ycor = *rhs.ycor;
         return *this;
-}
+}}
 
 TwoDimensionalPoint &TwoDimensionalPoint::operator=(TwoDimensionalPoint &&rhs) {
     std :: swap(xcor, rhs.xcor);
