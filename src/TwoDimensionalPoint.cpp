@@ -12,7 +12,8 @@
 #include "TwoDimensionalPoint.h"
 
 TwoDimensionalPoint::TwoDimensionalPoint(coordinate_unit xcor, coordinate_unit ycor) {
-    point *point = new TwoDimensionalPoint(xcoo, ycoo)
+    this-> xcor = new coordinate_unit(xcor);
+    this-> ycor = new coordinate_unit(ycor);
 }
 
 TwoDimensionalPoint::~TwoDimensionalPoint() {
