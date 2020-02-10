@@ -11,9 +11,9 @@
 #include <cmath>
 #include "TwoDimensionalPoint.h"
 
-TwoDimensionalPoint::TwoDimensionalPoint(coordinate_unit xcor, coordinate_unit ycor) {
-    xcor = new coordinate_unit(xcor);
-    ycor = new coordinate_unit(ycor);
+TwoDimensionalPoint::TwoDimensionalPoint(coordinate_unit xcoor, coordinate_unit ycoor) {
+    xcor = new coordinate_unit(xcoor);
+    ycor = new coordinate_unit(ycoor);
 }
 
 TwoDimensionalPoint::~TwoDimensionalPoint() {
