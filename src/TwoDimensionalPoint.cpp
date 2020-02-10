@@ -2,7 +2,7 @@
  * CSC232 - Data Structures
  * Missouri State University, Fall 2019
  *
- * @author Jim Daehn <fjdaehn@missouristate.edu>
+ * @author Jim Daehn <jdaehn@missouristate.edu>
  * @file   TwoDimensionalPoint.cpp
  * @brief  Implementation of a TwoDimensionalPoint ADT.
  */
