@@ -2,7 +2,7 @@
  * CSC232 - Data Structures
  * Missouri State University, Fall 2019
  *
- * @author Jim Daehn <jdaehn@missouristate.edu>
+ * @author Jim Daehn <fjdaehn@missouristate.edu>
  * @file   TwoDimensionalPoint.cpp
  * @brief  Implementation of a TwoDimensionalPoint ADT.
  */
@@ -11,57 +11,63 @@
 #include <cmath>
 #include "TwoDimensionalPoint.h"
 
-TwoDimensionalPoint::TwoDimensionalPoint(coordinate_unit x_coordinate, coordinate_unit y_coordinate) {
-    // TODO: Add an appropriate initializer list
+TwoDimensionalPoint::TwoDimensionalPoint(coordinate_unit xcor, coordinate_unit ycor) {
+    point *point = new TwoDimensionalPoint(xcoo, ycoo)
 }
 
 TwoDimensionalPoint::~TwoDimensionalPoint() {
-    // TODO: Delete appropriate data members
+    delete xcor;
+    delete ycor;
 }
 
 TwoDimensionalPoint::TwoDimensionalPoint(const TwoDimensionalPoint &other) {
-    // TODO: Add an appropriate initializer list
+    xcor = new coordinate_unit{*other.xcor};
+    ycor = new coordinate_unit{*other.ycor};
 }
 
 TwoDimensionalPoint::TwoDimensionalPoint(TwoDimensionalPoint &&other) noexcept {
-    // TODO: Add an appropriate initializer list and appropriate body
+    xcor = other.xcor;
+    ycor = other.ycor;
+    other.xcor = nullptr;
+    other.ycor = nullptr;
 }
 
 TwoDimensionalPoint &TwoDimensionalPoint::operator=(const TwoDimensionalPoint &rhs) {
-    // TODO: Add any appropriate code
-    return *this;
+    if (this !=&other) {
+        *xcor = *rhs.xcor;
+        *ycor = *rhs.ycor;
+        return *this;
 }
 
 TwoDimensionalPoint &TwoDimensionalPoint::operator=(TwoDimensionalPoint &&rhs) {
-    // TODO: Add any appropriate code
+    std :: swap(xcor, rhs.xcor);
+    std :: swap (ycor, rhs.ycor);
     return *this;
-}
 
 length_unit TwoDimensionalPoint::DistanceFromOrigin() const {
-    // TODO: Calculate and return the correct value
-    return 0;
+    return static_cast<length_unit>(sqrt(((*xPtr) * (*xPtr) + (*yPtr) * (*yPtr))));
 }
 
 length_unit TwoDimensionalPoint::DistanceFromPoint(const Point &other) const {
-    // TODO: Calculate and return the correct value
-    return 0;
+    const TwoDimensionalPoint &rhs = dynamic_cast<const TwoDimensionalPoint&>(other);
+    length_unit deltaX = (*rhs.xPtr) - *xPtr;
+    length_unit deltaY = (*rhs.yPtr) - *xPtr;
+    return sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
 length_unit TwoDimensionalPoint::GetX() const {
-    // TODO: Return the appropriate value
-    return 0;
+    return *xcor;
 }
 
 length_unit TwoDimensionalPoint::GetY() const {
-    // TODO: Return the appropriate value
-    return 0;
+    return *ycor;
 }
 
 bool TwoDimensionalPoint::IsOrigin() const {
-    // TODO Return the correct value
-    return false;
+    return (*xcor == 0 && * ycor == 0);
 }
 
 void TwoDimensionalPoint::Translate(coordinate_unit x, coordinate_unit y) {
-    // TODO: Implement me
+    *xcor += x;
+    *ycor += y;
 }
