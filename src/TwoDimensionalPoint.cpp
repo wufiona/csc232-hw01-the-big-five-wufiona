@@ -34,7 +34,7 @@ TwoDimensionalPoint::TwoDimensionalPoint(TwoDimensionalPoint &&other) noexcept {
 }
 
 TwoDimensionalPoint &TwoDimensionalPoint::operator=(const TwoDimensionalPoint &rhs) {
-    if (this !=&other) {
+    if (this !=&rhs) {
         *xcor = *rhs.xcor;
         *ycor = *rhs.ycor;
         return *this;
