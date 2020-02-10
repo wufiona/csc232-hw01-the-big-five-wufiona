@@ -44,6 +44,7 @@ TwoDimensionalPoint &TwoDimensionalPoint::operator=(TwoDimensionalPoint &&rhs) {
     std :: swap(xcor, rhs.xcor);
     std :: swap (ycor, rhs.ycor);
     return *this;
+}
 
 length_unit TwoDimensionalPoint::DistanceFromOrigin() const {
     return static_cast<length_unit>(sqrt(((*xPtr) * (*xPtr) + (*yPtr) * (*yPtr))));
