@@ -47,7 +47,7 @@ TwoDimensionalPoint &TwoDimensionalPoint::operator=(TwoDimensionalPoint &&rhs) {
 }
 
 length_unit TwoDimensionalPoint::DistanceFromOrigin() const {
-    return static_cast<length_unit>(sqrt(((*xPtr) * (*xPtr) + (*yPtr) * (*yPtr))));
+    return static_cast<length_unit>(sqrt(((*xcor) * (*xcor) + (*ycor) * (*ycor))));
 }
 
 length_unit TwoDimensionalPoint::DistanceFromPoint(const Point &other) const {
