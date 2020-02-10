@@ -52,8 +52,8 @@ length_unit TwoDimensionalPoint::DistanceFromOrigin() const {
 
 length_unit TwoDimensionalPoint::DistanceFromPoint(const Point &other) const {
     const TwoDimensionalPoint &rhs = dynamic_cast<const TwoDimensionalPoint&>(other);
-    length_unit deltaX = (*rhs.xPtr) - *xPtr;
-    length_unit deltaY = (*rhs.yPtr) - *xPtr;
+    length_unit deltaX = (*rhs.xcor) - *xcor;
+    length_unit deltaY = (*rhs.ycpr) - *ycor;
     return sqrt(deltaX * deltaX + deltaY * deltaY);
 }
 
